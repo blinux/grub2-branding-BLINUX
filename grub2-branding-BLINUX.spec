@@ -49,7 +49,7 @@ mkdir -p %{buildroot}/%{_sysconfdir}/default/
 cp grub %{buildroot}/%{_sysconfdir}/default/grub
 
 %files
-%attr(644,root,root) %{_sysconfdir}/grub
+%attr(644,root,root) %{_sysconfdir}/default/grub
 
 %changelog
 * Sun Mar 30 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
