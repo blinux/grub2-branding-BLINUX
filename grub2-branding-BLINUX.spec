@@ -24,7 +24,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 Name:		grub2-branding-BLINUX
-Version:        1.1
+Version:        2.0
 Release:        0
 License:        BSD-2-Clause
 Summary:	GRUB2 branding for BLINUX
@@ -45,13 +45,16 @@ GRUB2 branding and config for BLINUX
 
 %install
 rm -fr %{buildroot}
-mkdir -p %{buildroot}/boot/grub2/
-cp grub.cfg %{buildroot}/boot/grub2/
+mkdir -p %{buildroot}/%{_sysconfdir}/default/
+cp grub %{buildroot}/%{_sysconfdir}/default/grub
 
 %files
-%attr(644,root,root) /boot/grub2/grub.cfg
+%attr(644,root,root) %{_sysconfdir}/grub
 
 %changelog
+* Sun Mar 30 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
+- Bump to 2.0
+
 * Sun Mar 30 2014 Emmanuel Vadot <elbarto@bocal.org> - 1.1-0
 - Bump to 1.1
 
