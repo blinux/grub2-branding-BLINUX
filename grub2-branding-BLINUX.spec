@@ -49,6 +49,7 @@ mkdir -p %{buildroot}/%{_sysconfdir}/default/
 cp grub %{buildroot}/%{_sysconfdir}/default/grub
 
 %files
+%defattr(-,root,root,-)
 %config %{_sysconfdir}/default/grub
 
 %changelog
