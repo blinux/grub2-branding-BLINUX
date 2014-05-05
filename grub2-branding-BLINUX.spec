@@ -48,6 +48,17 @@ rm -fr %{buildroot}
 mkdir -p %{buildroot}/%{_sysconfdir}/default/
 cp grub %{buildroot}/%{_sysconfdir}/default/grub
 
+%post
+/usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg
+
+%postun
+case "$*" in
+  0)  
+  /usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg
+  ;;
+  esac
+
+
 %files
 %defattr(-,root,root,-)
 %config %{_sysconfdir}/default/grub
