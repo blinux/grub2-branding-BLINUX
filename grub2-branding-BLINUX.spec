@@ -34,6 +34,8 @@ Vendor:		Bocal
 Url:            http://www.bocal.org
 Group:          System Environment/Base
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
+Requires:	grub2
+BuildRequires:	grub2
 
 %description
 GRUB2 branding and config for BLINUX
