@@ -35,6 +35,8 @@ Url:            http://www.bocal.org
 Group:          System Environment/Base
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
 Conflicts:	grub2-branding-basedonopensuse,grub2-branding-openSUSE
+BuildRequires:	grub2
+Requires:	grub2
 
 %description
 GRUB2 branding and config for BLINUX
