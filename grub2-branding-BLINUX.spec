@@ -34,6 +34,7 @@ Vendor:		Bocal
 Url:            http://www.bocal.org
 Group:          System Environment/Base
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
+Conflicts:	grub2-branding-basedonopensuse,grub2-branding-openSUSE
 
 %description
 GRUB2 branding and config for BLINUX
