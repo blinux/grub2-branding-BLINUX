@@ -52,7 +52,11 @@ mkdir -p %{buildroot}/%{_sysconfdir}/default/
 cp grub %{buildroot}/%{_sysconfdir}/default/grub
 
 %post
-grub2-mkconfig -o /boot/grub2/grub.cfg
+if [ -f %{_sysconfdir}/sysconfig/bootloader ]; then
+  . %{_sysconfdir}/sysconfig/bootloader
+fi
+/sbin/update-bootloader --reinit 2>&1 | grep -q 'Unknown option: reinit' &&
+/sbin/update-bootloader --refresh || true
 
 %files
 %defattr(-,root,root,-)
