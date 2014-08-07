@@ -1,5 +1,5 @@
 #-
-# Copyright 2013-2014 Emmanuel Vadot <elbarto@bocal.org>
+# Copyright 2014 Emmanuel Vadot <elbarto@bocal.org>
 # All rights reserved
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,12 +29,12 @@ Release:        0
 License:        BSD-2-Clause
 Summary:	GRUB2 branding for BLINUX
 BuildArch:      noarch
-Source0:        %{name}-%{version}.tgz
+Source0:        grub
 Vendor:		Bocal
 Url:            http://www.bocal.org
 Group:          System Environment/Base
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
-Conflicts:	grub2-branding-basedonopensuse,grub2-branding-openSUSE
+Conflicts:	otherproviders(grub2-branding)
 BuildRequires:	grub2
 Requires:	grub2
 
@@ -49,7 +49,7 @@ GRUB2 branding and config for BLINUX
 %install
 rm -fr %{buildroot}
 mkdir -p %{buildroot}/%{_sysconfdir}/default/
-cp grub %{buildroot}/%{_sysconfdir}/default/grub
+install -D -m 644 %{SOURCE0} %{buildroot}/%{_sysconfdir}/default/
 
 %post
 if [ -f %{_sysconfdir}/sysconfig/bootloader ]; then
