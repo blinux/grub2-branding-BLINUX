@@ -28,19 +28,20 @@ Version:        2.0
 Release:        0
 License:        BSD-2-Clause
 Summary:	GRUB2 branding for BLINUX
-Source0:        grub
-Vendor:		Bocal
 Group:          System Environment/Base
+
+Requires:	grub2
 Conflicts:	otherproviders(grub2-branding)
 Supplements:	packageand(grub2:branding-BLINUX)
 Provides:       grub2-branding = %{version}
 
 BuildArch:      noarch
 BuildRequires:	grub2
-Requires:	grub2
+Source0:        grub
 
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
 Url:            http://www.blinux.fr
+Vendor:		Blinux
 
 %description
 GRUB2 branding and config for BLINUX
