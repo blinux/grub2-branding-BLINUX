@@ -25,7 +25,7 @@
 
 Name:		grub2-branding-BLINUX
 Version:        2.0
-Release:        1
+Release:        2
 License:        BSD-2-Clause
 Summary:	GRUB2 branding for BLINUX
 Group:          System Environment/Base
@@ -54,8 +54,9 @@ GRUB2 branding and config for BLINUX
 %install
 rm -fr %{buildroot}
 mkdir -p %{buildroot}/%{_sysconfdir}/default/
+mkdir -p %{buildroot}/%{_sysconfdir}/grub.d/
 install -D -m 644 %{SOURCE0} %{buildroot}/%{_sysconfdir}/default/
-install -D -m 644 %{SOURCE1} %{buildroot}/%{_sysconfdir}/grub.d/
+install -D -m 755 %{SOURCE1} %{buildroot}/%{_sysconfdir}/grub.d/
 
 %post
 if [ -f %{_sysconfdir}/sysconfig/bootloader ]; then
@@ -67,6 +68,7 @@ fi
 %files
 %defattr(-,root,root,-)
 %config %{_sysconfdir}/default/grub
+%config %{_sysconfdir}/grub.d/31-windows
 
 %changelog
 * Sun Mar 30 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0

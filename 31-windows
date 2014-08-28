@@ -1,0 +1,15 @@
+#! /bin/sh
+
+cat <<EOF
+menuentry 'Windows Boot Manager (on /dev/sda1)' --class windows --class os {
+        insmod part_gpt
+        insmod fat
+        set root='hd0,gpt1'
+        if [ x$feature_platform_search_hint = xy ]; then
+          search --no-floppy --fs-uuid --set=root --hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1  94C9-784D
+        else
+          search --no-floppy --fs-uuid --set=root 94C9-784D
+        fi
+        chainloader /EFI/Boot/bootmgfw.efi
+}
+EOF
