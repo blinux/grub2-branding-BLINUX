@@ -25,7 +25,7 @@
 
 Name:		grub2-branding-BLINUX
 Version:        2.0
-Release:        0
+Release:        1
 License:        BSD-2-Clause
 Summary:	GRUB2 branding for BLINUX
 Group:          System Environment/Base
@@ -38,6 +38,7 @@ Provides:       grub2-branding = %{version}
 BuildArch:      noarch
 BuildRequires:	grub2
 Source0:        grub
+Source1:	31-windows
 
 Packager:       Emmanuel Vadot <elbarto@bocal.org>
 Url:            http://www.blinux.fr
@@ -54,6 +55,7 @@ GRUB2 branding and config for BLINUX
 rm -fr %{buildroot}
 mkdir -p %{buildroot}/%{_sysconfdir}/default/
 install -D -m 644 %{SOURCE0} %{buildroot}/%{_sysconfdir}/default/
+install -D -m 644 %{SOURCE1} %{buildroot}/%{_sysconfdir}/grub.d/
 
 %post
 if [ -f %{_sysconfdir}/sysconfig/bootloader ]; then
