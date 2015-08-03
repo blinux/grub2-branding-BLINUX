@@ -24,8 +24,8 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 Name:		grub2-branding-BLINUX
-Version:        2.0
-Release:        2
+Version:        3.0
+Release:        0
 License:        BSD-2-Clause
 Summary:	GRUB2 branding for BLINUX
 Group:          System Environment/Base
@@ -71,6 +71,9 @@ fi
 %config %{_sysconfdir}/grub.d/31-windows
 
 %changelog
+* Mon Aug 03 2015 Emmanuel Vadot <elbarto@bocal.org> - 3.0
+- Update to 3.0
+
 * Sun Mar 30 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
 - Bump to 2.0
 
